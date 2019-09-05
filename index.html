@@ -54,10 +54,15 @@
             status.innerHTML = '未登录';
             logout.setAttribute('style', 'display:none');            
         }else {
-            status.innerHTML = `${res.userInfo.username || res.userInfo.email || res.userInfo.nickname} 你好，你已处于登录状态`;
-            login.setAttribute('style', 'display:none');
-            sessionTip.setAttribute('style', 'display: block');
-            sessionPre.innerHTML = js_beautify(JSON.stringify(res));
+            if (Object.keys(res.session) === 0) {
+                status.innerHTML = '未登录';
+                logout.setAttribute('style', 'display:none');
+            }else {
+                status.innerHTML = `${res.userInfo.username || res.userInfo.email || res.userInfo.nickname} 你好，你已处于登录状态`;
+                login.setAttribute('style', 'display:none');
+                sessionTip.setAttribute('style', 'display: block');
+                sessionPre.innerHTML = js_beautify(JSON.stringify(res));
+            }
         }
       };
 
