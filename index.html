@@ -50,19 +50,15 @@
 
       const callTrackSession = async function() {
         const res = await authing.trackSession();
-        if (!res.session) {
+        const arr = Object.keys(res.session);
+        if (arr.length === 0) {
             status.innerHTML = '未登录';
             logout.setAttribute('style', 'display:none');            
         }else {
-            if (Object.keys(res.session) === 0) {
-                status.innerHTML = '未登录';
-                logout.setAttribute('style', 'display:none');
-            }else {
-                status.innerHTML = `${res.userInfo.username || res.userInfo.email || res.userInfo.nickname} 你好，你已处于登录状态`;
-                login.setAttribute('style', 'display:none');
-                sessionTip.setAttribute('style', 'display: block');
-                sessionPre.innerHTML = js_beautify(JSON.stringify(res));
-            }
+            status.innerHTML = `${res.userInfo.username || res.userInfo.email || res.userInfo.nickname} 你好，你已处于登录状态`;
+            login.setAttribute('style', 'display:none');
+            sessionTip.setAttribute('style', 'display: block');
+            sessionPre.innerHTML = js_beautify(JSON.stringify(res));
         }
       };
 
