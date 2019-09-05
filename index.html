@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Authing SSO Example</title>
+    <style>
+    body {
+        font-family: Avenir,Helvetica,Arial,sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-align: center;
+        color: #2c3e50;
+        margin-top: 60px;
+    }
+
+    a {
+        color: #42b983;
+        cursor: pointer;
+        text-decoration: underline;
+    }
+    </style>
+  </head>
+  <body>
+    <div>
+        <img data-v-1129b33e="" alt="Vue logo" height="200" src="https://cdn.authing.cn/authing-logo@2.png">
+        <h1>Authing Web SSO 示例</h1>
+        <h2>当前状态：<span id="status">检测中</span></h2>
+        <h3>以下是你的 session 信息，使用 authing.trackSession 方法获取：</h3>
+        <code id="session"></code>
+    </div>
+    <a id="btn-login">登录</a>
+    <a id="btn-logout">退出</a>
+    <script src="https://cdn.jsdelivr.net/npm/@authing/sso/dist/AuthingSSO.umd.min.js"></script>
+    <script>
+      const authing = new AuthingSSO({
+        appId: "5d70d0e991fdd597019df70d",
+        appType: "oidc",
+        appDomain: "sample-sso.authing.cn"
+      });
+
+      const login = document.getElementById('btn-login');
+      const logout = document.getElementById('btn-logout');
+      const status = document.getElementById('status');
+      const sessionPre = document.getElementById('session');
+
+      login.onclick = function() {
+        authing.login();
+      };
+
+      const callTrackSession = async function() {
+        const res = await authing.trackSession();
+        const arr = Object.keys(res.session);
+        if (arr.length === 0) {
+            status.innerHTML = '未登录';
+            logout.setAttribute('style', 'display:none');            
+        }else {
+            status.innerHTML = `${res.userInfo.username || res.userInfo.email || res.userInfo.nickname} 你好，你已处于登录状态`;
+            login.setAttribute('style', 'display:none');
+            sessionPre.innerHTML = JSON.stringify(res);
+        }
+      };
+
+      callTrackSession()
+      
+      logout.onclick = async function() {
+        let res = await auth.logout();
+        alert(JSON.stringify(res));
+      };
+    </script>
+  </body>
+</html>
