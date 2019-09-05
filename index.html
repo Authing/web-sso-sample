@@ -50,8 +50,7 @@
 
       const callTrackSession = async function() {
         const res = await authing.trackSession();
-        const arr = Object.keys(res.session);
-        if (arr.length === 0) {
+        if (!res.session) {
             status.innerHTML = '未登录';
             logout.setAttribute('style', 'display:none');            
         }else {
