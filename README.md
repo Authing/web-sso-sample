@@ -11,4 +11,8 @@ $ http-server
 
 ## 开发文档
 
-[https://docs.authing.cn/authing/quickstart/implement-sso-with-authing](实现单点登录)
+[https://docs.authing.cn/authing/quickstart/implement-sso-with-authing](https://docs.authing.cn/authing/quickstart/implement-sso-with-authing)
+
+如果上面的链接打不开，请使用下面这个：
+
+[https://docs.authing.cn/authing/quickstart/implement-sso-with-authing](https://docs.authing.cn/authing/quickstart/implement-sso-with-authing)
