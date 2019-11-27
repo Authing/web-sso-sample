@@ -25,19 +25,58 @@
   <body>
     <div style="margin-bottom:22px">
         <img data-v-1129b33e="" alt="Vue logo" height="200" src="https://cdn.authing.cn/authing-logo@2.png">
-        <h1>使用 Authing 五分钟实现单点登录</h1>
+        <h1>使用 Authing 五分钟实现单点登录和完整的认证、授权</h1>
         <h2>当前状态：<span id="status">检测中</span></h2>
         <h3 id="track-session-tip" style="display:none">以下是你的 session 信息：</h3>
         <pre style="text-align: left;" id="session"></pre>
     </div>
-    <a id="btn-login">登录</a>
+    <a id="btn-login">点击体验 Web 端登录</a>
+    <br>
+    <a href="https://sample.authing.cn/wxmobile/">点击体验微信移动端网页登录</a>
+    <br>
     <a id="btn-logout">退出</a>
     <p>
-        <a href="https://authing.cn/login" target="_blank">使用 Authing</a>
+        <br>
+        <p>使用 Authing</p>
+        <a href="https://authing.cn/login" target="_blank">注册 Authing</a>
         <a href="https://github.com/Authing/web-sso-sample" target="_blank" style="margin-left:11px">本示例代码</a>
         <a href="https://docs.authing.cn/authing/quickstart/implement-sso-with-authing" target="_blank" style="margin-left:11px">开发文档</a>
+        <br>
+        <p>SDK 接入</p>
+        <a href="https://learn.authing.cn/authing/sdk/authing-sdk-for-wxapp" target="_blank" style="margin-left:11px">小程序 SDK</a>
+        <a href="https://learn.authing.cn/authing/sdk/authing-sdk-for-javascript" target="_blank" style="margin-left:11px">JavaScript SDK</a>
+        <a href="https://learn.authing.cn/authing/sdk/authing-sdk-for-node" target="_blank" style="margin-left:11px">Node.js SDK</a>
+        <a href="https://learn.authing.cn/authing/sdk/authing-sdk-for-java" target="_blank" style="margin-left:11px">Java SDK</a>
+        <a href="https://learn.authing.cn/authing/sdk/authing-sdk-for-python" target="_blank" style="margin-left:11px">Python SDK</a>
+        <a href="https://learn.authing.cn/authing/sdk/authing-sdk-for-php" target="_blank" style="margin-left:11px">PHP SDK</a>
+        <a href="https://learn.authing.cn/authing/sdk/authing-sdk-for-go" target="_blank" style="margin-left:11px">Go SDK</a>
+        <a href="https://authing.cn/graphiql" target="_blank" style="margin-left:11px">API 调试器</a>
+        <br>
+        <p>授权</p>
+        <a href="https://learn.authing.cn/authing/advanced/roles" target="_blank" style="margin-left:11px">配置用户权限</a>
+        <a href="https://learn.authing.cn/authing/sdk/sdk-for-node/update-user-permissions" target="_blank" style="margin-left:11px">在代码中读取/修改用户权限（Node）</a>
+        <p>第三方登录</p>
+        <a href="https://learn.authing.cn/authing/advanced/social-login" target="_blank" style="margin-left:11px">接入社会化登录</a>
+        <a href="https://learn.authing.cn/authing/advanced/social-login" target="_blank" style="margin-left:11px">接入微信手机网页授权登录</a>
+        <a href="https://learn.authing.cn/authing/advanced/oauth2" target="_blank" style="margin-left:11px">使用 OAuth 2.0</a>
+        <a href="https://learn.authing.cn/authing/advanced/oidc" target="_blank" style="margin-left:11px">使用 OIDC（OpenID Connect）</a>
+        <a href="https://learn.authing.cn/authing/advanced/use-saml" target="_blank" style="margin-left:11px">使用 SAML</a>
+        <a href="https://learn.authing.cn/authing/advanced/ldap" target="_blank" style="margin-left:11px">配置第三方 LDAP 服务</a>
+        <a href="https://learn.authing.cn/authing/advanced/ldap-idp" target="_blank" style="margin-left:11px">将 Authing 作为 LDAP 服务器</a>
+        <br>
+        <p>登录表单</p>
+        <a href="https://learn.authing.cn/authing/sdk/guard" target="_blank" style="margin-left:11px">Guard 登录表单</a>
+        <a href="https://learn.authing.cn/authing/sdk/loginform-vs-custom-ui" target="_blank" style="margin-left:11px">Guard VS 自定义 UI</a>
+        <br>
+        <p>扫码登录</p>
+        <a href="https://learn.authing.cn/authing/advanced/wxapp-qrcode" target="_blank" style="margin-left:11px">接入小程序扫码登录</a>
+        <a href="https://learn.authing.cn/authing/advanced/wxapp-qrcode/private-wxapp" target="_blank" style="margin-left:11px">接入私有化小程序</a>
+        <br>
+        <p>多因素认证（MFA）</p>
+        <a href="https://learn.authing.cn/authing/mfa/configure-mfa" target="_blank" style="margin-left:11px">开启 MFA</a>
     </p>
     <p>
+        <p>其他</p>
         <a href="https://github.com/Authing/oidc-window">在单窗口中打开登录页面的代码示例</a>
     </p>
     <script src="https://cdn.jsdelivr.net/npm/@authing/sso/dist/AuthingSSO.umd.min.js"></script>
